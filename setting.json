@@ -1,0 +1,20 @@
+{
+  "type": "rainbow",
+  "fileName": "profile-chxchx.svg",
+  "backgroundColor": "#050816",
+  "foregroundColor": "#b8d6f2",
+  "strongColor": "#00cfff",
+  "weakColor": "#0a3158",
+  "radarColor": "#1687ff",
+  "growingAnimation": true,
+  "saturation": "72%",
+  "contribLightness": [
+    "16%",
+    "28%",
+    "40%",
+    "52%",
+    "67%"
+  ],
+  "duration": "10s",
+  "hueRatio": -5
+}

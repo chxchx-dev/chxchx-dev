@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1100" height="355" viewBox="0 0 1100 355" role="img" aria-label="Terminal CHXCHX-DEV: status de arquitectura, IA aplicada, seguridad ética, Linux y software libre.">
+<style>@keyframes pulse{0%,45%{opacity:1}46%,100%{opacity:0}} .cursor{animation:pulse 1.1s steps(1,end) infinite}</style>
+<rect width="1100" height="355" rx="18" fill="#030b16"/><rect x="1" y="1" width="1098" height="353" rx="17" stroke="#1e506c" fill="none" stroke-width="2"/><rect x="1" y="1" width="1098" height="39" rx="18" fill="#102339"/><path d="M1 40H1099" stroke="#1e506c"/>
+<circle cx="27" cy="20" r="6" fill="#ef6465"/><circle cx="49" cy="20" r="6" fill="#ecc061"/><circle cx="71" cy="20" r="6" fill="#65d48e"/>
+<text x="445" y="26" font-size="14" font-family="monospace" fill="#a5bfd5">chxchx@fedora: ~/identity</text>
+<g font-size="17" font-family="monospace">
+<text x="32" y="78" fill="#4ce0e0">chxchx@fedora:~$ <tspan fill="#e9f7ff">./init-profile --secure</tspan></text>
+<text x="32" y="116" fill="#718ca9">Starting identity modules...</text>
+<text x="32" y="157" fill="#7de2a4">[ OK ] <tspan fill="#e7eff8">software_architecture</tspan></text>
+<text x="32" y="191" fill="#7de2a4">[ OK ] <tspan fill="#e7eff8">applied_ai / llm_systems</tspan></text>
+<text x="32" y="225" fill="#7de2a4">[ OK ] <tspan fill="#e7eff8">ethical_cybersecurity</tspan></text>
+<text x="32" y="259" fill="#7de2a4">[ OK ] <tspan fill="#e7eff8">linux / open_source</tspan></text>
+<text x="32" y="310" fill="#4ce0e0">chxchx@fedora:~$ <tspan fill="#d9f3ff">build | secure | share</tspan></text>
+<rect class="cursor" x="398" y="295" width="11" height="18" fill="#21cffc"/>
+</g><g opacity=".12" font-family="monospace" font-size="140" font-weight="900" fill="#23bcff"><text x="710" y="230">CHX</text></g>
+</svg>
