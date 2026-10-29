@@ -10,9 +10,9 @@ Construir una identidad de GitHub centrada en evidencia técnica, ética profesi
 - [x] Terminal SVG accesible y con cursor animado
 - [x] Semilla de generador GIF en Python
 - [x] Workflows para actualizar GIF y contribuciones 3D
-- [ ] Ejecutar manualmente ambos workflows por primera vez
-- [ ] Confirmar que se generen los archivos binarios/SVG y que el commit automático funcione
-- [ ] Incorporar al README el calendario 3D generado cuando exista
+- [x] Ejecutar ambos workflows por primera vez (activados por push)
+- [x] Confirmar generación del GIF y SVG 3D con GitHub Actions (ambos workflows exitosos)
+- [x] Incorporar GIF y calendario 3D reales al README
 - [ ] Revisar el banner en pantalla móvil y escritorio
 - [ ] Añadir enlaces verificables de demos/casos de uso, solo si se pueden mostrar públicamente
 
@@ -22,11 +22,11 @@ Revisar HTML renderizado en GitHub, formato móvil, enlaces, contraste y texto a
 **Criterio de salida:** README visible en https://github.com/chxchx-dev y cinco proyectos públicos accesibles.
 
 ## Fase 2 — Automatizaciones (días 2–3)
-En **Actions** ejecutar `Update CHXCHX terminal GIF` y `CHXCHX 3D contributions`. Los workflows usan `GITHUB_TOKEN` efímero, ninguna clave personal, versiones fijas y escritura limitada a contenidos.
+En **Actions** revisar las ejecuciones de `Update CHXCHX terminal GIF` y `CHXCHX 3D contributions`; ambas concluyeron correctamente el 29 de octubre de 2026. Los workflows usan `GITHUB_TOKEN` efímero, ninguna clave personal, versiones fijas y escritura limitada a contenidos.
 
 **Criterio de salida:** `assets/terminal.gif` y `profile-3d-contrib/profile-chxchx.svg` aparecen en `main` y los logs no tienen secretos expuestos.
 
-Tras la primera ejecución, sustituir en `README.md` el elemento `assets/terminal.svg` por `assets/terminal.gif` e insertar el calendario:
+El README ya enlaza `assets/terminal.gif` y el calendario 3D:
 ```html
 <img alt="Calendario de contribuciones 3D" width="94%" src="./profile-3d-contrib/profile-chxchx.svg" />
 ```
