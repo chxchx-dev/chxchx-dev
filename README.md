@@ -28,7 +28,7 @@ chxchx@fedora:~$ cat /etc/focus
 ```
 
 <div align="center">
-<img src="./assets/terminal.svg" width="94%" alt="Terminal personalizada de CHXCHX-DEV con módulos de arquitectura, IA, seguridad y Linux" />
+<img src="./assets/terminal.gif" width="94%" alt="Terminal personalizada de CHXCHX-DEV con módulos de arquitectura, IA, seguridad y Linux" />
 </div>
 
 ## `~/build --proof`
@@ -71,14 +71,13 @@ improve()   > aprender, aplicar, medir, repetir
 
 <div align="center">
 
-<!-- El gráfico 3D se habilita después de ejecutar el workflow inicial. -->
-<img alt="GitHub activity graph" width="94%" src="https://github-readme-activity-graph.vercel.app/graph?username=chxchx-dev&bg_color=050b15&color=73cfff&line=00b7ff&point=ffffff&area=true&hide_border=true" />
+<img alt="Calendario tridimensional de contribuciones GitHub de CHXCHX-DEV" width="94%" src="./profile-3d-contrib/profile-chxchx.svg" />
 
 </div>
 
 ## `~/next`
 
-Este perfil es un proyecto vivo. Ver [roadmap](./docs/ROADMAP.md) para el calendario de contribuciones 3D, la terminal GIF, mejoras de accesibilidad y evidencia de proyectos.
+Este perfil es un proyecto vivo. La terminal GIF y el calendario 3D se actualizan mediante GitHub Actions. Ver [roadmap](./docs/ROADMAP.md) para próximos laboratorios, accesibilidad y evidencia de proyectos.
 
 <div align="center">
 
