@@ -33,7 +33,7 @@
 <g transform="translate(773 22)">
   <path d="M-104 0v84" stroke="#1d9ac6" stroke-width="1.5" opacity=".7"/>
   <g transform="translate(0 18)"><path d="M-7 13c-10-9-10-15-7-20 2-3 7-4 8-10 1-7 10-7 12 0 0 7 7 8 9 13 3 7-2 13-8 17z" fill="none" stroke="#b4e8ff" stroke-width="2.3"/><circle cx="-4" cy="-10" r="1.7" fill="#b4e8ff"/><circle cx="5" cy="-10" r="1.7" fill="#b4e8ff"/><path d="M-5-2l5 4 5-4M-14 15h7M7 15h7" stroke="#b4e8ff" stroke-width="2" fill="none"/></g>
-  <text x="0" y="58" fill="#dfeffc" text-anchor="middle" font-family="'DejaVu Sans',Arial,sans-serif" font-size="15">Linux &</text>
+  <text x="0" y="58" fill="#dfeffc" text-anchor="middle" font-family="'DejaVu Sans',Arial,sans-serif" font-size="15">Linux &amp;</text>
   <text x="0" y="77" fill="#bad4ed" text-anchor="middle" font-family="'DejaVu Sans',Arial,sans-serif" font-size="14">Open Source</text>
 </g>
 <g transform="translate(988 22)">
