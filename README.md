@@ -11,7 +11,7 @@
 
 <div align="center">
 
-<img src="./assets/identity-stack.png" width="100%" alt="Especialidades CHXCHX-DEV: arquitectura de software, IA aplicada, ciberseguridad ética, Linux y automatización; iconos y tecnologías sin superposición" />
+<img src="./assets/identity-skills.png" width="100%" alt="Franja con cinco especialidades y quince herramientas: arquitectura, IA, ciberseguridad ética, Linux y DevOps" />
 
 <br />
 
