@@ -1,6 +1,9 @@
 <div align="center">
 
-<img alt="CHXCHX-DEV — banner personal, máscara y ciudad nocturna" width="100%" src="./assets/brand-banner.svg" />
+<picture>
+  <source media="(prefers-reduced-motion: reduce)" srcset="./assets/header-original.png" />
+  <img alt="CHXCHX-DEV: ciudad nocturna con máscara que desaparece y reaparece mediante glitch" width="100%" src="./assets/header-glitch.gif" />
+</picture>
 
 **Linux · Open Source · Secure by Design**
 
