@@ -2,35 +2,32 @@
 
 <picture>
   <source media="(prefers-reduced-motion: reduce)" srcset="./assets/header-original.png" />
-  <img alt="CHXCHX-DEV: ciudad nocturna con máscara que desaparece y reaparece mediante glitch" width="100%" src="./assets/header-glitch.gif" />
+  <img src="./assets/header-glitch.gif" alt="CHXCHX-DEV: masked character, futuristic night city and subtle glitch animation" width="100%" />
 </picture>
 
-**Linux · Open Source · Secure by Design**
+<p>
+  <strong>Linux · Open Source · Secure by Design</strong>
+</p>
 
-</div>
+<p>
+  <em>Building scalable software, applied AI/LLM systems, secure automation, and open-source tools on Linux.</em>
+</p>
 
-<div align="center">
+<img src="./assets/identity-skills.png" width="100%" alt="CHXCHX-DEV: software architecture, applied AI, ethical cybersecurity, Linux, open source and DevOps skills and tools" />
 
-<img src="./assets/identity-skills.png" width="100%" alt="Franja con cinco especialidades y quince herramientas: arquitectura, IA, ciberseguridad ética, Linux y DevOps" />
+<img src="./assets/terminal.gif" width="100%" alt="Animated Fedora terminal showing CHXCHX-DEV's software architecture, AI, security and Linux focus" />
 
-<br />
+<img src="./assets/activity-signal.png" width="100%" alt="CHXCHX / SIGNAL: GitHub activity telemetry based on visible contributions, active days and streaks" />
 
-<img src="./assets/terminal.gif" width="93%" alt="Terminal animada de Fedora CHXCHX-DEV con módulos de software, inteligencia artificial, seguridad y Linux" />
+<p>
+  <sub>Build deliberately · Secure ethically · Open by default</sub>
+</p>
 
-</div>
-
-## `~/signal`
-
-<div align="center">
-
-<img alt="CHXCHX Signal: tablero personalizado con contribuciones visibles de GitHub, días activos, racha y cuadrícula de actividad con la máscara de CHXCHX-DEV" width="100%" src="./assets/activity-signal.png" />
-
-</div>
-
-<div align="center">
-
-<sub>Build deliberately · Secure ethically · Open by default</sub>
-
-<sub>[Roadmap del perfil](./docs/ROADMAP.md) · [GitHub](https://github.com/chxchx-dev)</sub>
+<p>
+  <sub>
+    <a href="./docs/ROADMAP.md">Roadmap</a> ·
+    <a href="https://github.com/chxchx-dev">GitHub</a>
+  </sub>
+</p>
 
 </div>
