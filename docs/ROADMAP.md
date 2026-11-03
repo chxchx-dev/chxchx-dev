@@ -1,25 +1,27 @@
-# CHXCHX-DEV — mantenimiento del perfil
+# CHXCHX-DEV — perfil público
 
-## Estado
-- [x] Una sola sección `~/whoami` reúne identidad, especialidades, stack y principios.
-- [x] Sin sección de proyectos destacados.
-- [x] Terminal animada de Fedora y contribuciones 3D.
-- [x] Script local para animar únicamente la máscara del banner original.
-- [x] GitHub Actions prepara la generación y publicación automática del GIF.
-- [ ] Subir `assets/header-original.png` desde el archivo original.
-- [ ] Confirmar que GitHub Actions genera `assets/header-glitch.gif` y actualiza el README.
-- [ ] Revisar calidad visual en móvil y escritorio.
+## Estado verificado
+- [x] Banner con la máscara original y efecto glitch
+- [x] PNG de skills y tecnologías, separado de la terminal animada
+- [x] Terminal animada de Fedora
+- [x] Panel propio `CHXCHX / SIGNAL` con datos reales de GitHub
+- [x] Generación diaria automática mediante `CHXCHX Activity Signal`
+- [x] Gráfico 3D genérico retirado del README y su workflow desactivado
+- [ ] Verificar el resultado visual en pantalla móvil y escritorio
 
-## Activar el banner solicitado
-1. En GitHub, abrir el repositorio `chxchx-dev/chxchx-dev` en la carpeta `assets/`.
-2. Elegir **Add file → Upload files**, cargar el PNG original y guardarlo con el nombre **header-original.png**.
-3. Confirmar la subida en la rama `main`.
-4. El workflow `Render CHXCHX animated header` genera el GIF y sustituye la referencia del banner SVG en el README.
-5. La animación se reproduce en bucle; en dispositivos con preferencia de movimiento reducido se muestra la imagen original estática.
+## Activity Signal
 
-## Diseño
-- Conservar la composición: título, cielo, ciudad, personaje sentado y elementos de escritorio.
-- Aplicar desaparición y glitches solamente a la máscara del fondo.
-- Evitar animaciones invasivas o texto repetido debajo del banner.
-- Mantener accesibilidad y enlaces verificables, sin repositorios privados ni información sensible.
-- Si cambia la imagen de origen, revisar las coordenadas de la máscara en `scripts/generate_header_glitch.py` antes de publicarla.
+La imagen `assets/activity-signal.png` se crea desde `scripts/generate_activity.py`. Se consulta el calendario de contribuciones visibles de GitHub mediante GraphQL en ventanas de 90 días para reducir problemas de límites de consulta. La representación incluye la máscara original del encabezado como marca de agua. La imagen no contiene estadísticas inventadas y se actualiza diariamente mediante GitHub Actions.
+
+El SVG generado `assets/activity-signal.svg` se conserva como salida vectorial; el README usa el PNG para asegurar compatibilidad con el renderizador de GitHub.
+
+> Los datos corresponden a contribuciones visibles para el token del workflow. No necesariamente incluyen la actividad privada ni coinciden con todas las métricas del perfil de usuario.
+
+## Mantenimiento
+
+1. Cambia la visualización en `scripts/generate_activity.py`.
+2. Ejecuta el workflow **CHXCHX Activity Signal** manualmente o espera a la siguiente ejecución programada.
+3. Revisa `assets/activity-signal.png` y el README después del commit automático.
+4. Conserva los permisos mínimos de GitHub Actions; no introduzcas un PAT personal ni secretos en el repositorio.
+
+La carpeta `profile-3d-contrib/` permanece en Git como historial de la etapa anterior, pero no se utiliza en el README.

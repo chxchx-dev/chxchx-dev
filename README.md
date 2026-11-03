@@ -19,11 +19,11 @@
 
 </div>
 
-## `~/activity`
+## `~/signal`
 
 <div align="center">
 
-<img alt="Calendario 3D de contribuciones de CHXCHX-DEV" width="94%" src="./profile-3d-contrib/profile-chxchx.svg" />
+<img alt="CHXCHX Signal: tablero personalizado con contribuciones visibles de GitHub, días activos, racha y cuadrícula de actividad con la máscara de CHXCHX-DEV" width="100%" src="./assets/activity-signal.png" />
 
 </div>
 
