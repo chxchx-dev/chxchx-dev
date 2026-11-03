@@ -24,9 +24,11 @@ def main() -> None:
         raise ValueError("Expected an SVG document")
     if b"<script" in source.lower() or b"foreignobject" in source.lower():
         raise ValueError("Unexpected executable or embedded HTML")
-    raster = cairosvg.svg2png(bytestring=source, output_width=2280, output_height=936)
+    width = int(document.attrib["width"])
+    height = int(document.attrib["height"])
+    raster = cairosvg.svg2png(bytestring=source, output_width=width * 2, output_height=height * 2)
     image = Image.open(BytesIO(raster)).convert("RGB")
-    if image.size != (2280, 936):
+    if image.size != (width * 2, height * 2):
         raise RuntimeError(f"Unexpected image dimensions: {image.size}")
     OUTPUT.parent.mkdir(parents=True, exist_ok=True)
     image.save(OUTPUT, format="PNG", optimize=True)

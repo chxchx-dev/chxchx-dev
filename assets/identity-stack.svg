@@ -1,64 +1,61 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1140" height="468" viewBox="0 0 1140 468" role="img" aria-labelledby="title desc">
-<title id="title">CHXCHX-DEV: identity and stack</title>
-<desc id="desc">Arquitectura de software, IA aplicada, ciberseguridad ética, Linux y DevOps. Terminal whoami de Christian Iglesias y cuatro bloques de especialidad.</desc>
+<svg xmlns="http://www.w3.org/2000/svg" width="1140" height="238" viewBox="0 0 1140 238" role="img" aria-labelledby="title desc">
+<title id="title">Especialidades y tecnologías de CHXCHX-DEV</title>
+<desc id="desc">Cinco áreas: arquitectura de software, IA aplicada, ciberseguridad ética, Linux y software libre, automatización y DevOps.</desc>
 <defs>
-<linearGradient id="back" x1="0" x2="1" y1="0" y2="1"><stop stop-color="#020b17"/><stop offset="1" stop-color="#040f22"/></linearGradient>
-<linearGradient id="bar" x1="0" x2="1"><stop stop-color="#071b2e"/><stop offset="1" stop-color="#163b5c"/></linearGradient>
-<filter id="glow" x="-20%" y="-30%" width="140%" height="160%"><feGaussianBlur stdDeviation="2.2"/></filter>
+<linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#020918"/><stop offset=".55" stop-color="#06172a"/><stop offset="1" stop-color="#030918"/></linearGradient>
+<linearGradient id="border" x1="0" y1="0" x2="1" y2="0"><stop stop-color="#00f1ff"/><stop offset=".5" stop-color="#2263b2"/><stop offset="1" stop-color="#00f1ff"/></linearGradient>
 </defs>
-<rect width="1140" height="468" rx="17" fill="#020813"/>
-<!-- Skills upper strip -->
-<rect x="5" y="5" width="1130" height="165" rx="14" fill="url(#back)" stroke="#24d5ed" stroke-width="1.6"/>
-<path d="M5 28V16Q5 5 18 5h24M1135 28V16Q1135 5 1122 5h-24M5 145v13q0 12 14 12h23M1135 145v13q0 12-14 12h-23" fill="none" stroke="#42ecff" stroke-width="2.5"/>
-<path d="M20 111H1120" stroke="#0a6b8d" stroke-width="1" opacity=".6"/>
-
-<g transform="translate(128 22)">
-  
-  <g transform="translate(0 18)"><path d="M-17 -12h26v20h-26zM-11 -5l5 5-5 5m12-5h5" fill="none" stroke="#b4e8ff" stroke-width="2.6" stroke-linejoin="round" stroke-linecap="round"/></g>
-  <text x="0" y="58" fill="#dfeffc" text-anchor="middle" font-family="'DejaVu Sans',Arial,sans-serif" font-size="15">Arquitectura</text>
-  <text x="0" y="77" fill="#bad4ed" text-anchor="middle" font-family="'DejaVu Sans',Arial,sans-serif" font-size="14">de Software</text>
-</g>
-<g transform="translate(343 22)">
-  <path d="M-104 0v84" stroke="#1d9ac6" stroke-width="1.5" opacity=".7"/>
-  <g transform="translate(0 18)"><path d="M-8 -16C-20 -19-23 0-12 5c-8 13 10 21 14 9M8-16C20-19 23 0 12 5c8 13-10 21-14 9M-1 -18v36M-11 -7h8M11 -7H3M-11 5h8M11 5H3" fill="none" stroke="#b4e8ff" stroke-width="2.2" stroke-linecap="round"/></g>
-  <text x="0" y="58" fill="#dfeffc" text-anchor="middle" font-family="'DejaVu Sans',Arial,sans-serif" font-size="15">IA Aplicada</text>
-  <text x="0" y="77" fill="#bad4ed" text-anchor="middle" font-family="'DejaVu Sans',Arial,sans-serif" font-size="14">· LLM · RAG</text>
-</g>
-<g transform="translate(558 22)">
-  <path d="M-104 0v84" stroke="#1d9ac6" stroke-width="1.5" opacity=".7"/>
-  <g transform="translate(0 18)"><path d="M0-20l17 7v13c0 13-7 21-17 27C-10 21-17 13-17 0v-13zM-8 1l6 6 11-14" fill="none" stroke="#b4e8ff" stroke-width="2.6" stroke-linejoin="round" stroke-linecap="round"/></g>
-  <text x="0" y="58" fill="#dfeffc" text-anchor="middle" font-family="'DejaVu Sans',Arial,sans-serif" font-size="15">Ciberseguridad</text>
-  <text x="0" y="77" fill="#bad4ed" text-anchor="middle" font-family="'DejaVu Sans',Arial,sans-serif" font-size="14">Ética</text>
-</g>
-<g transform="translate(773 22)">
-  <path d="M-104 0v84" stroke="#1d9ac6" stroke-width="1.5" opacity=".7"/>
-  <g transform="translate(0 18)"><path d="M-7 13c-10-9-10-15-7-20 2-3 7-4 8-10 1-7 10-7 12 0 0 7 7 8 9 13 3 7-2 13-8 17z" fill="none" stroke="#b4e8ff" stroke-width="2.3"/><circle cx="-4" cy="-10" r="1.7" fill="#b4e8ff"/><circle cx="5" cy="-10" r="1.7" fill="#b4e8ff"/><path d="M-5-2l5 4 5-4M-14 15h7M7 15h7" stroke="#b4e8ff" stroke-width="2" fill="none"/></g>
-  <text x="0" y="58" fill="#dfeffc" text-anchor="middle" font-family="'DejaVu Sans',Arial,sans-serif" font-size="15">Linux &amp;</text>
-  <text x="0" y="77" fill="#bad4ed" text-anchor="middle" font-family="'DejaVu Sans',Arial,sans-serif" font-size="14">Open Source</text>
-</g>
-<g transform="translate(988 22)">
-  <path d="M-104 0v84" stroke="#1d9ac6" stroke-width="1.5" opacity=".7"/>
-  <g transform="translate(0 18)"><path d="M-23-1c5-10 16-11 23 0C8 12 19 12 23 1M-23 1c5 10 16 11 23 0C8-12 19-12 23-1" stroke="#b4e8ff" stroke-width="3.4" fill="none" stroke-linecap="round"/></g>
-  <text x="0" y="58" fill="#dfeffc" text-anchor="middle" font-family="'DejaVu Sans',Arial,sans-serif" font-size="15">Automatización</text>
-  <text x="0" y="77" fill="#bad4ed" text-anchor="middle" font-family="'DejaVu Sans',Arial,sans-serif" font-size="14">· DevOps</text>
-</g>
-<g transform="translate(135 125)"><rect x="-20" y="-17" width="40" height="34" rx="7" fill="#118ada" stroke="#42b8df" stroke-opacity=".48"/><text x="0" y="6" fill="#ffffff" font-family="Arial,Helvetica,sans-serif" font-size="18" font-weight="700" text-anchor="middle">TS</text></g><g transform="translate(212 125)"><rect x="-20" y="-17" width="40" height="34" rx="7" fill="#3670a5" stroke="#42b8df" stroke-opacity=".48"/><text x="0" y="6" fill="#f7d452" font-family="Arial,Helvetica,sans-serif" font-size="18" font-weight="700" text-anchor="middle">Py</text></g><g transform="translate(289 125)"><rect x="-20" y="-17" width="40" height="34" rx="7" fill="#8847bf" stroke="#42b8df" stroke-opacity=".48"/><text x="0" y="6" fill="#ffffff" font-family="Arial,Helvetica,sans-serif" font-size="18" font-weight="700" text-anchor="middle">C#</text></g><g transform="translate(366 125)"><rect x="-20" y="-17" width="40" height="34" rx="7" fill="#087e9d" stroke="#42b8df" stroke-opacity=".48"/><text x="0" y="6" fill="#bff8ff" font-family="Arial,Helvetica,sans-serif" font-size="11" font-weight="700" text-anchor="middle">React</text></g><g transform="translate(443 125)"><rect x="-20" y="-17" width="40" height="34" rx="7" fill="#161f2c" stroke="#42b8df" stroke-opacity=".48"/><text x="0" y="6" fill="#ffffff" font-family="Arial,Helvetica,sans-serif" font-size="18" font-weight="700" text-anchor="middle">N</text></g><g transform="translate(520 125)"><rect x="-20" y="-17" width="40" height="34" rx="7" fill="#d7234b" stroke="#42b8df" stroke-opacity=".48"/><text x="0" y="6" fill="#ffffff" font-family="Arial,Helvetica,sans-serif" font-size="14" font-weight="700" text-anchor="middle">Nest</text></g><g transform="translate(597 125)"><rect x="-20" y="-17" width="40" height="34" rx="7" fill="#4e2cad" stroke="#42b8df" stroke-opacity=".48"/><text x="0" y="6" fill="#ffffff" font-family="Arial,Helvetica,sans-serif" font-size="14" font-weight="700" text-anchor="middle">.NET</text></g><g transform="translate(674 125)"><rect x="-20" y="-17" width="40" height="34" rx="7" fill="#3776ac" stroke="#42b8df" stroke-opacity=".48"/><text x="0" y="6" fill="#ffffff" font-family="Arial,Helvetica,sans-serif" font-size="18" font-weight="700" text-anchor="middle">PG</text></g><g transform="translate(751 125)"><rect x="-20" y="-17" width="40" height="34" rx="7" fill="#cc292d" stroke="#42b8df" stroke-opacity=".48"/><text x="0" y="6" fill="#ffffff" font-family="Arial,Helvetica,sans-serif" font-size="11" font-weight="700" text-anchor="middle">Redis</text></g><g transform="translate(828 125)"><rect x="-20" y="-17" width="40" height="34" rx="7" fill="#1377ca" stroke="#42b8df" stroke-opacity=".48"/><text x="0" y="6" fill="#ffffff" font-family="Arial,Helvetica,sans-serif" font-size="11" font-weight="700" text-anchor="middle">Docker</text></g><g transform="translate(905 125)"><rect x="-20" y="-17" width="40" height="34" rx="7" fill="#131e2c" stroke="#42b8df" stroke-opacity=".48"/><text x="0" y="6" fill="#ffbb37" font-family="Arial,Helvetica,sans-serif" font-size="14" font-weight="700" text-anchor="middle">AWS</text></g><g transform="translate(982 125)"><rect x="-20" y="-17" width="40" height="34" rx="7" fill="#19283b" stroke="#42b8df" stroke-opacity=".48"/><text x="0" y="6" fill="#ffffff" font-family="Arial,Helvetica,sans-serif" font-size="18" font-weight="700" text-anchor="middle">GH</text></g>
-<!-- Terminal left -->
-<rect x="5" y="190" width="560" height="268" rx="14" fill="#020d1a" stroke="#65829d" stroke-width="1.4"/>
-<path d="M19 190H551Q565 190 565 204V227H5v-23Q5 190 19 190" fill="url(#bar)"/>
-<circle cx="26" cy="209" r="6.3" fill="#ee5961"/><circle cx="48" cy="209" r="6.3" fill="#ecc65b"/><circle cx="70" cy="209" r="6.3" fill="#62d18a"/>
-<text x="105" y="216" fill="#addcf2" font-family="monospace" font-size="15">~/whoami.sh</text>
-<g font-family="'DejaVu Sans Mono',monospace" font-size="17">
-<text x="24" y="258" fill="#00e4f6">$ whoami</text>
-<text x="24" y="287" fill="#d6e3f1">&gt; Christian Iglesias</text>
-<text x="24" y="313" fill="#d6e3f1">&gt; Ingeniero de Sistemas</text>
-<text x="24" y="339" fill="#d6e3f1">&gt; Full-Stack · Arquitectura · IA · Seguridad</text>
-<text x="24" y="365" fill="#d6e3f1">&gt; Fedora Linux · Open Source</text>
-<text x="24" y="403" fill="#00e4f6">$ status</text>
-<text x="24" y="431" fill="#d6e3f1">&gt; build() · automate() · secure() · share()</text>
-</g>
-<rect x="24" y="443" width="11" height="6" fill="#19f1f4"/>
-<!-- Detail right -->
-<path d="M599 192V456" stroke="#00c9ed" stroke-width="2.4"/>
-<g transform="translate(632 214)"><g transform="translate(27 7) scale(.76)"><circle r="16" fill="none" stroke="#37d7f3" stroke-width="2.5"/><circle r="5" fill="none" stroke="#37d7f3" stroke-width="2"/><path d="M-22 0h15M7 0h15M0-22v15M0 7v15" stroke="#37d7f3" stroke-width="2"/></g><text x="73" y="2" fill="#37e6f1" font-size="18" font-weight="700" font-family="Arial,Helvetica,sans-serif">Enfoque</text><text x="73" y="25" fill="#dcecf6" font-size="16" font-family="Arial,Helvetica,sans-serif">Diseñar, construir y proteger sistemas.</text></g><g transform="translate(632 273)"><path d="M62 -31H496" stroke="#557693" stroke-width=".9" opacity=".7"/><g transform="translate(27 7) scale(.76)"><path d="M-19-10L0-20l19 10L0 0zM-19 0L0 10 19 0M-19 10L0 20l19-10" stroke="#37d7f3" stroke-width="2.3" stroke-linejoin="round" fill="none"/></g><text x="73" y="2" fill="#37e6f1" font-size="18" font-weight="700" font-family="Arial,Helvetica,sans-serif">Especialidad</text><text x="73" y="25" fill="#dcecf6" font-size="16" font-family="Arial,Helvetica,sans-serif">Full-stack, integración IA/LLM y automatización.</text></g><g transform="translate(632 332)"><path d="M62 -31H496" stroke="#557693" stroke-width=".9" opacity=".7"/><g transform="translate(27 7) scale(.76)"><path d="M-11-9a11 11 0 0122 0v17a11 11 0 01-22 0zM-15-17l-7-6M15-17l7-6M-13-1h-11M13-1h11M-13 10l-11 7M13 10l11 7M0-20V19" stroke="#37d7f3" stroke-width="2.2" fill="none" stroke-linecap="round"/></g><text x="73" y="2" fill="#37e6f1" font-size="18" font-weight="700" font-family="Arial,Helvetica,sans-serif">Interés</text><text x="73" y="25" fill="#dcecf6" font-size="16" font-family="Arial,Helvetica,sans-serif">Seguridad ofensiva y defensiva autorizada.</text></g><g transform="translate(632 391)"><path d="M62 -31H496" stroke="#557693" stroke-width=".9" opacity=".7"/><g transform="translate(27 7) scale(.76)"><rect x="-20" y="-16" width="40" height="32" rx="6" fill="none" stroke="#37d7f3" stroke-width="2.2"/><path d="M-12-6l7 7-7 7M0 9h10" stroke="#37d7f3" stroke-width="2.2" fill="none" stroke-linecap="round"/></g><text x="73" y="2" fill="#37e6f1" font-size="18" font-weight="700" font-family="Arial,Helvetica,sans-serif">Entorno</text><text x="73" y="25" fill="#dcecf6" font-size="16" font-family="Arial,Helvetica,sans-serif">Fedora, Linux, software libre y cultura DevOps.</text></g>
+<rect x="0" y="0" width="1140" height="238" rx="18" fill="#020815"/>
+<rect x="6" y="6" width="1128" height="226" rx="16" fill="url(#bg)" stroke="url(#border)" stroke-width="2.4"/>
+<path d="M22 6H65 M1075 6H1118 M22 232H65 M1075 232H1118" stroke="#70faff" stroke-width="2.5"/>
+<path d="M23 163H1117" stroke="#147694" stroke-width="1.1" opacity=".65"/>
+<g transform="translate(122 64)"><rect x="-24" y="-19" width="48" height="38" rx="5" fill="none" stroke="#a3e8ff" stroke-width="3.2"/><path d="M-12-8l10 9-10 9 M5 10h10" stroke="#19d7ff" fill="none" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"/></g>
+<text x="122" y="116" text-anchor="middle" font-family="DejaVu Sans, Arial, sans-serif" font-weight="700" font-size="19" fill="#e9f7ff">Arquitectura</text>
+<text x="122" y="141" text-anchor="middle" font-family="DejaVu Sans, Arial, sans-serif" font-weight="500" font-size="18" fill="#b9d9ee">de Software</text>
+<rect x="23" y="180" width="62" height="37" rx="7" fill="#0c73c6" stroke="#43b8e4" stroke-opacity=".55" stroke-width="1.15"/>
+<text x="54" y="204" text-anchor="middle" font-family="DejaVu Sans, Arial, sans-serif" font-size="15" font-weight="700" fill="#edf9ff">TS</text>
+<rect x="91" y="180" width="62" height="37" rx="7" fill="#bd1844" stroke="#43b8e4" stroke-opacity=".55" stroke-width="1.15"/>
+<text x="122" y="204" text-anchor="middle" font-family="DejaVu Sans, Arial, sans-serif" font-size="15" font-weight="700" fill="#edf9ff">Nest</text>
+<rect x="159" y="180" width="62" height="37" rx="7" fill="#4f30a5" stroke="#43b8e4" stroke-opacity=".55" stroke-width="1.15"/>
+<text x="190" y="204" text-anchor="middle" font-family="DejaVu Sans, Arial, sans-serif" font-size="15" font-weight="700" fill="#edf9ff">.NET</text>
+<path d="M234 26V153" stroke="#1789aa" stroke-width="1.35" opacity=".75"/>
+<g transform="translate(346 64)"><path d="M-4-21c-18-13-31 4-21 17-11 13-1 25 11 24 7 14 26 6 25-7V-12C11-21 3-24-4-21Z" fill="none" stroke="#a4e6ff" stroke-width="2.8"/><path d="M4-21c18-13 31 4 21 17 11 13 1 25-11 24-7 14-26 6-25-7V-12C-11-21-3-24 4-21Z" fill="none" stroke="#25c9f2" stroke-width="2.8"/><g fill="#5ef1ff"><circle cx="-17" cy="-5" r="3"/><circle cx="18" cy="-5" r="3"/><circle cx="-13" cy="12" r="3"/><circle cx="12" cy="12" r="3"/></g></g>
+<text x="346" y="116" text-anchor="middle" font-family="DejaVu Sans, Arial, sans-serif" font-weight="700" font-size="19" fill="#e9f7ff">IA Aplicada</text>
+<text x="346" y="141" text-anchor="middle" font-family="DejaVu Sans, Arial, sans-serif" font-weight="500" font-size="18" fill="#b9d9ee">LLM · RAG</text>
+<rect x="247" y="180" width="62" height="37" rx="7" fill="#2d649b" stroke="#43b8e4" stroke-opacity=".55" stroke-width="1.15"/>
+<text x="278" y="204" text-anchor="middle" font-family="DejaVu Sans, Arial, sans-serif" font-size="15" font-weight="700" fill="#edf9ff">Python</text>
+<rect x="315" y="180" width="62" height="37" rx="7" fill="#195e7c" stroke="#43b8e4" stroke-opacity=".55" stroke-width="1.15"/>
+<text x="346" y="204" text-anchor="middle" font-family="DejaVu Sans, Arial, sans-serif" font-size="15" font-weight="700" fill="#edf9ff">RAG</text>
+<rect x="383" y="180" width="62" height="37" rx="7" fill="#104656" stroke="#43b8e4" stroke-opacity=".55" stroke-width="1.15"/>
+<text x="414" y="204" text-anchor="middle" font-family="DejaVu Sans, Arial, sans-serif" font-size="15" font-weight="700" fill="#edf9ff">Ollama</text>
+<path d="M458 26V153" stroke="#1789aa" stroke-width="1.35" opacity=".75"/>
+<g transform="translate(570 64)"><path d="M0-28l24 9v19c0 19-12 29-24 37C-12 29-24 19-24 0v-19z" fill="none" stroke="#ade7ff" stroke-width="3.2" stroke-linejoin="round"/><path d="M-11 1l8 9L13-8" stroke="#24e2ff" stroke-width="3.3" fill="none" stroke-linecap="round"/></g>
+<text x="570" y="116" text-anchor="middle" font-family="DejaVu Sans, Arial, sans-serif" font-weight="700" font-size="19" fill="#e9f7ff">Ciberseguridad</text>
+<text x="570" y="141" text-anchor="middle" font-family="DejaVu Sans, Arial, sans-serif" font-weight="500" font-size="18" fill="#b9d9ee">Ética</text>
+<rect x="471" y="180" width="62" height="37" rx="7" fill="#1c6186" stroke="#43b8e4" stroke-opacity=".55" stroke-width="1.15"/>
+<text x="502" y="204" text-anchor="middle" font-family="DejaVu Sans, Arial, sans-serif" font-size="15" font-weight="700" fill="#edf9ff">OAuth</text>
+<rect x="539" y="180" width="62" height="37" rx="7" fill="#22566d" stroke="#43b8e4" stroke-opacity=".55" stroke-width="1.15"/>
+<text x="570" y="204" text-anchor="middle" font-family="DejaVu Sans, Arial, sans-serif" font-size="15" font-weight="700" fill="#edf9ff">JWT</text>
+<rect x="607" y="180" width="62" height="37" rx="7" fill="#305b7e" stroke="#43b8e4" stroke-opacity=".55" stroke-width="1.15"/>
+<text x="638" y="204" text-anchor="middle" font-family="DejaVu Sans, Arial, sans-serif" font-size="15" font-weight="700" fill="#edf9ff">PKCE</text>
+<path d="M682 26V153" stroke="#1789aa" stroke-width="1.35" opacity=".75"/>
+<g transform="translate(794 64)"><path d="M-10 21C-24 12-24-4-14-14c4-4 6-7 6-13 0-13 16-13 16 0 0 6 2 9 6 13 10 10 10 26-4 35Z" fill="none" stroke="#aff0ff" stroke-width="2.8"/><circle cx="-6" cy="-17" r="2.6" fill="#b3e4ff"/><circle cx="6" cy="-17" r="2.6" fill="#b3e4ff"/><path d="M-6-7L0-2l6-5M-16 24h12M4 24h12" stroke="#25dafa" stroke-width="2.6" fill="none" stroke-linecap="round"/></g>
+<text x="794" y="116" text-anchor="middle" font-family="DejaVu Sans, Arial, sans-serif" font-weight="700" font-size="19" fill="#e9f7ff">Linux &amp;</text>
+<text x="794" y="141" text-anchor="middle" font-family="DejaVu Sans, Arial, sans-serif" font-weight="500" font-size="18" fill="#b9d9ee">Open Source</text>
+<rect x="695" y="180" width="62" height="37" rx="7" fill="#2656a8" stroke="#43b8e4" stroke-opacity=".55" stroke-width="1.15"/>
+<text x="726" y="204" text-anchor="middle" font-family="DejaVu Sans, Arial, sans-serif" font-size="15" font-weight="700" fill="#edf9ff">Fedora</text>
+<rect x="763" y="180" width="62" height="37" rx="7" fill="#086cb0" stroke="#43b8e4" stroke-opacity=".55" stroke-width="1.15"/>
+<text x="794" y="204" text-anchor="middle" font-family="DejaVu Sans, Arial, sans-serif" font-size="15" font-weight="700" fill="#edf9ff">Docker</text>
+<rect x="831" y="180" width="62" height="37" rx="7" fill="#167484" stroke="#43b8e4" stroke-opacity=".55" stroke-width="1.15"/>
+<text x="862" y="204" text-anchor="middle" font-family="DejaVu Sans, Arial, sans-serif" font-size="15" font-weight="700" fill="#edf9ff">OSS</text>
+<path d="M906 26V153" stroke="#1789aa" stroke-width="1.35" opacity=".75"/>
+<g transform="translate(1018 64)"><path d="M0 0C-14-19-36-16-36-1S-13 18 0 0C13-18 36-16 36-1S14 19 0 0Z" fill="none" stroke="#a9eaff" stroke-width="4.4" stroke-linecap="round"/></g>
+<text x="1018" y="116" text-anchor="middle" font-family="DejaVu Sans, Arial, sans-serif" font-weight="700" font-size="19" fill="#e9f7ff">Automatización</text>
+<text x="1018" y="141" text-anchor="middle" font-family="DejaVu Sans, Arial, sans-serif" font-weight="500" font-size="18" fill="#b9d9ee">DevOps</text>
+<rect x="919" y="180" width="62" height="37" rx="7" fill="#26323e" stroke="#43b8e4" stroke-opacity=".55" stroke-width="1.15"/>
+<text x="950" y="204" text-anchor="middle" font-family="DejaVu Sans, Arial, sans-serif" font-size="15" font-weight="700" fill="#edf9ff">AWS</text>
+<rect x="987" y="180" width="62" height="37" rx="7" fill="#2a3c58" stroke="#43b8e4" stroke-opacity=".55" stroke-width="1.15"/>
+<text x="1018" y="204" text-anchor="middle" font-family="DejaVu Sans, Arial, sans-serif" font-size="15" font-weight="700" fill="#edf9ff">GH</text>
+<rect x="1055" y="180" width="62" height="37" rx="7" fill="#135a7a" stroke="#43b8e4" stroke-opacity=".55" stroke-width="1.15"/>
+<text x="1086" y="204" text-anchor="middle" font-family="DejaVu Sans, Arial, sans-serif" font-size="15" font-weight="700" fill="#edf9ff">CI/CD</text>
 </svg>

@@ -11,7 +11,11 @@
 
 <div align="center">
 
-<img src="./assets/identity-stack.png" width="100%" alt="Panel CHXCHX-DEV: especialidades y tecnologías arriba, terminal whoami a la izquierda y enfoque, especialidad, interés y entorno a la derecha" />
+<img src="./assets/identity-stack.png" width="100%" alt="Especialidades CHXCHX-DEV: arquitectura de software, IA aplicada, ciberseguridad ética, Linux y automatización; iconos y tecnologías sin superposición" />
+
+<br />
+
+<img src="./assets/terminal.gif" width="93%" alt="Terminal animada de Fedora CHXCHX-DEV con módulos de software, inteligencia artificial, seguridad y Linux" />
 
 </div>
 
