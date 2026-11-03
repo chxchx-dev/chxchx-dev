@@ -11,7 +11,7 @@
 
 <div align="center">
 
-<img src="./assets/identity-stack.svg" width="100%" alt="Panel CHXCHX-DEV: especialidades y tecnologías arriba, terminal whoami a la izquierda y enfoque, especialidad, interés y entorno a la derecha" />
+<img src="./assets/identity-stack.png" width="100%" alt="Panel CHXCHX-DEV: especialidades y tecnologías arriba, terminal whoami a la izquierda y enfoque, especialidad, interés y entorno a la derecha" />
 
 </div>
 
