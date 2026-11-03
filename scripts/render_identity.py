@@ -14,7 +14,7 @@ from PIL import Image
 
 ROOT = Path(__file__).resolve().parents[1]
 SOURCE = ROOT / "assets" / "identity-stack.svg"
-OUTPUT = ROOT / "assets" / "identity-stack.png"
+OUTPUT = ROOT / "assets" / "identity-skills.png"
 
 
 def main() -> None:
