@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """CHXCHX / SIGNAL: original telemetry based on GitHub contribution records.
 
-Generate assets/activity-signal.svg and assets/activity-signal.png.
+Generate the editable SVG asset used by the profile README.
 The default GITHUB_TOKEN reads visible GitHub activity; no personal token required.
 """
 import base64
@@ -13,7 +13,6 @@ from pathlib import Path
 from urllib.request import Request, urlopen
 from xml.sax.saxutils import escape
 
-import cairosvg
 from PIL import Image, ImageEnhance, ImageOps
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -97,21 +96,20 @@ def color(value):
 def build_svg(start, end, records):
     total = sum(records.values())
     active = sum(value > 0 for value in records.values())
-    longest, current = 0, 0
-    for delta in range(365):
-        day = (start + timedelta(days=delta)).isoformat()
-        if records.get(day, 0):
-            current += 1
-            longest = max(longest, current)
-        else:
-            current = 0
+    # Count the active streak ending today, or yesterday if today's data has
+    # not arrived yet. This avoids resetting the streak early in the UTC day.
+    streak_end = end if records.get(end.isoformat(), 0) else end - timedelta(days=1)
+    current_streak = 0
+    while streak_end >= start and records.get(streak_end.isoformat(), 0):
+        current_streak += 1
+        streak_end -= timedelta(days=1)
     graph_start = start - timedelta(days=(start.weekday() + 1) % 7)
     width_weeks = ((end - graph_start).days // 7) + 1
     if width_weeks > 54:
         raise RuntimeError("Unexpected activity grid width")
     segs = [f"""<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="470" viewBox="0 0 1200 470" role="img" aria-labelledby="title desc">
 <title id="title">CHXCHX-DEV / Signal Log</title>
-<desc id="desc">Actividad verificada: {total} contribuciones visibles en 365 días, {active} días activos y una racha máxima de {longest} días.</desc>
+<desc id="desc">Actividad verificada: {total} contribuciones visibles en 365 días, {active} días activos y una racha actual de {current_streak} días.</desc>
 <defs>
 <linearGradient id="bg" x2="1" y2="1"><stop stop-color="#030813"/><stop offset=".56" stop-color="#07182c"/><stop offset="1" stop-color="#020916"/></linearGradient>
 <linearGradient id="neon" x2="1"><stop stop-color="#11d5e9"/><stop offset=".5" stop-color="#19578e"/><stop offset="1" stop-color="#11d5e9"/></linearGradient>
@@ -136,7 +134,7 @@ def build_svg(start, end, records):
     for x, label, value in [
         (54, "CONTRIBUCIONES VISIBLES", total),
         (319, "DÍAS ACTIVOS", active),
-        (575, "RACHA MÁXIMA", longest),
+        (575, "RACHA ACTUAL", current_streak),
     ]:
         segs.append(f'<text x="{x}" y="139" fill="#91aec7" font-size="14" font-family="DejaVu Sans Mono,monospace">{escape(label)}</text>')
         segs.append(f'<text x="{x}" y="191" fill="#f0faff" font-size="48" font-weight="800" font-family="DejaVu Sans,Arial,sans-serif">{value}</text>')
@@ -181,12 +179,7 @@ def main():
     ASSETS.mkdir(parents=True, exist_ok=True)
     svg = build_svg(start, end, records)
     (ASSETS / "activity-signal.svg").write_text(svg, encoding="utf-8")
-    png = cairosvg.svg2png(bytestring=svg.encode(), output_width=1800, output_height=705)
-    with Image.open(BytesIO(png)) as im:
-        if im.size != (1800, 705):
-            raise RuntimeError("Bad PNG dimensions")
-    (ASSETS / "activity-signal.png").write_bytes(png)
-    print(f"Verified activity: {len(records)} days, {start} to {end}; rendered PNG")
+    print(f"Verified activity: {len(records)} days, {start} to {end}; rendered SVG")
 
 
 if __name__ == "__main__":
