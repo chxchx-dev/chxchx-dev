@@ -17,7 +17,7 @@
 
 <img src="./assets/terminal.gif" width="100%" alt="Animated Fedora terminal showing CHXCHX-DEV's software architecture, AI, security and Linux focus" />
 
-<img src="./assets/activity-signal.png" width="100%" alt="CHXCHX / SIGNAL: GitHub activity telemetry based on visible contributions, active days and streaks" />
+<img src="./assets/activity-signal.svg" width="100%" alt="CHXCHX / SIGNAL: GitHub activity telemetry based on visible contributions, active days and current streak" />
 
 <p>
   <sub>Build deliberately · Secure ethically · Open by default</sub>
