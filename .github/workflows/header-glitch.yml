@@ -5,6 +5,7 @@ on:
     branches: [main]
     paths:
       - 'assets/header-original.png'
+      - 'assets/header-lunar-texture.jpg'
       - 'scripts/generate_header_glitch.py'
       - '.github/workflows/header-glitch.yml'
 

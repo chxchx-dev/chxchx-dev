@@ -2,7 +2,7 @@
 
 <picture>
   <source media="(prefers-reduced-motion: reduce)" srcset="./assets/header-original.png" />
-  <img src="./assets/header-glitch.gif" alt="CHXCHX-DEV: night city with the moon glitching into the signature mask" width="100%" />
+  <img src="./assets/header-glitch.gif" alt="CHXCHX-DEV: night city with Maya and a crescent moon that reveals the signature mask" width="100%" />
 </picture>
 
 <p>
