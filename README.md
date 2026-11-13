@@ -2,7 +2,7 @@
 
 <picture>
   <source media="(prefers-reduced-motion: reduce)" srcset="./assets/header-original.png" />
-  <img src="./assets/header-glitch.gif" alt="CHXCHX-DEV: masked character, futuristic night city and subtle glitch animation" width="100%" />
+  <img src="./assets/header-glitch.gif" alt="CHXCHX-DEV: night city with the moon glitching into the signature mask" width="100%" />
 </picture>
 
 <p>
