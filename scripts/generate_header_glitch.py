@@ -9,6 +9,11 @@ ROOT = Path(__file__).resolve().parents[1]
 SOURCE = ROOT / "assets" / "header-original.png"
 DEST = ROOT / "assets" / "header-glitch.gif"
 WIDTH = 1100
+PADDING_TOP = 8
+PADDING_BOTTOM = 8
+MOON_X = 0.521
+MOON_Y = 0.15
+MOON_RADIUS = 0.023
 
 
 def build_mask(size):
@@ -20,7 +25,7 @@ def build_mask(size):
     ]
     mask = Image.new("L", size, 0)
     ImageDraw.Draw(mask).polygon(
-        [(round(x * scale), round(y * scale)) for x, y in points],
+        [(round(x * scale), round(y * scale) + PADDING_TOP) for x, y in points],
         fill=255,
     )
     return mask.filter(ImageFilter.GaussianBlur(radius=8))
@@ -33,19 +38,22 @@ def make_moon_sky(base, mask):
     stars = Image.new("RGB", base.size, (3, 9, 20))
     draw_stars = ImageDraw.Draw(stars)
     for _ in range(48):
-        x, y = rng.randrange(460, 690), rng.randrange(4, 112)
+        x, y = rng.randrange(460, 690), rng.randrange(PADDING_TOP + 4, PADDING_TOP + 112)
         draw_stars.point((x, y), fill=(19, 38, 67))
     sky = Image.composite(stars, base, mask)
 
     # The moon sits inside the old mask silhouette; all other original artwork stays intact.
-    cx, cy, radius = round(width * 0.521), round(height * 0.15), round(width * 0.034)
+    content_height = height - PADDING_TOP - PADDING_BOTTOM
+    cx = round(width * MOON_X)
+    cy = PADDING_TOP + round(content_height * MOON_Y)
+    radius = max(12, round(width * MOON_RADIUS))
     glow = Image.new("RGB", base.size, (0, 0, 0))
     glow_draw = ImageDraw.Draw(glow)
     glow_draw.ellipse(
-        (cx - radius * 1.35, cy - radius * 1.35, cx + radius * 1.35, cy + radius * 1.35),
-        fill=(8, 72, 128),
+        (cx - radius * 1.25, cy - radius * 1.25, cx + radius * 1.25, cy + radius * 1.25),
+        fill=(12, 100, 180),
     )
-    sky = ImageChops.screen(sky, glow.filter(ImageFilter.GaussianBlur(radius=radius * 0.38)))
+    sky = ImageChops.screen(sky, glow.filter(ImageFilter.GaussianBlur(radius=radius * 0.42)))
 
     # Cut an offset shadow out of the moon disc to create a clean crescent silhouette.
     moon_mask = Image.new("L", base.size, 0)
@@ -78,21 +86,26 @@ def glitch(image, seed, strength=1):
     frame = image.copy()
     draw = ImageDraw.Draw(frame)
     rng = Random(seed)
-    left, right = round(WIDTH * 0.405), round(WIDTH * 0.635)
-    top, bottom = 2, min(frame.height - 1, round(frame.height * 0.31))
-    shift = round(5 + 13 * strength)
+    content_height = frame.height - PADDING_TOP - PADDING_BOTTOM
+    cx = round(WIDTH * MOON_X)
+    cy = PADDING_TOP + round(content_height * MOON_Y)
+    radius = max(12, round(WIDTH * MOON_RADIUS))
+    left, right = cx - round(radius * 1.45), cx + round(radius * 1.45)
+    top = max(PADDING_TOP, cy - round(radius * 1.35))
+    bottom = min(frame.height - PADDING_BOTTOM, cy + round(radius * 1.35))
+    shift = round(3 + 7 * strength)
     for index in range(10):
         y = rng.randrange(top, bottom)
         band_h = rng.choice((1, 2, 3, 5))
-        x1 = rng.randrange(left, right - 30)
-        x2 = rng.randrange(x1 + 25, right)
+        x1 = rng.randrange(left, right - 15)
+        x2 = rng.randrange(x1 + 12, right)
         band = frame.crop((x1, y, x2, min(bottom, y + band_h)))
         offset = rng.choice((-shift, -shift // 2, shift // 2, shift))
         frame.paste(band, (max(left, min(right - band.width, x1 + offset)), y))
     for _ in range(5):
         y = rng.randrange(top, bottom)
-        x1 = rng.randrange(left, right - 20)
-        x2 = min(right, x1 + rng.randrange(18, 85))
+        x1 = rng.randrange(left, right - 12)
+        x2 = min(right, x1 + rng.randrange(12, 45))
         color = rng.choice(((35, 219, 245), (89, 118, 255), (238, 76, 179)))
         draw.line((x1, y, x2, y), fill=color, width=rng.choice((1, 1, 2)))
     return frame
@@ -104,25 +117,35 @@ def main():
         return
 
     original = Image.open(SOURCE).convert("RGB")
-    height = round(original.height * WIDTH / original.width)
-    base = original.resize((WIDTH, height), Image.Resampling.LANCZOS)
+    content_height = round(original.height * WIDTH / original.width)
+    artwork = original.resize((WIDTH, content_height), Image.Resampling.LANCZOS)
+
+    # Add a thin extension to the canvas so the title sits slightly lower without
+    # cropping or repainting the original characters, dog, city, or lettering.
+    base = Image.new("RGB", (WIDTH, content_height + PADDING_TOP + PADDING_BOTTOM))
+    base.paste(artwork.crop((0, 0, WIDTH, 1)).resize((WIDTH, PADDING_TOP)), (0, 0))
+    base.paste(artwork, (0, PADDING_TOP))
+    base.paste(
+        artwork.crop((0, content_height - 1, WIDTH, content_height)).resize((WIDTH, PADDING_BOTTOM)),
+        (0, PADDING_TOP + content_height),
+    )
     moon = make_moon_sky(base, build_mask(base.size))
 
-    # Move from the original artwork to the moon, let the glitch assemble the mask,
-    # then hold the finished banner. No empty-sky frame is used.
+    # Hold the complete banner, reveal a small crescent in the mask's place,
+    # then let tight, localized glitch bands assemble the original mask again.
     sequence = [
-        (base, 1500),
-        (glitch(Image.blend(base, moon, 0.32), 101, 0.55), 110),
-        (glitch(Image.blend(base, moon, 0.68), 102, 0.85), 110),
-        (moon, 760),
-        (glitch(moon, 103, 1.0), 100),
-        (glitch(Image.blend(moon, base, 0.28), 104, 1.0), 100),
-        (glitch(Image.blend(moon, base, 0.58), 105, 1.0), 90),
-        (glitch(Image.blend(moon, base, 0.84), 106, 0.85), 90),
-        (glitch(base, 107, 0.7), 100),
         (base, 1650),
-        (glitch(base, 108, 0.45), 90),
-        (base, 1100),
+        (glitch(Image.blend(base, moon, 0.38), 101, 0.6), 100),
+        (moon, 480),
+        (glitch(moon, 102, 0.85), 90),
+        (moon, 260),
+        (glitch(Image.blend(moon, base, 0.30), 103, 1.0), 100),
+        (glitch(Image.blend(moon, base, 0.66), 104, 1.0), 100),
+        (glitch(Image.blend(moon, base, 0.94), 105, 0.7), 100),
+        (glitch(base, 106, 0.55), 90),
+        (base, 1800),
+        (glitch(base, 107, 0.4), 80),
+        (base, 1200),
     ]
 
     frames = [frame.quantize(colors=96, dither=Image.Dither.NONE) for frame, _ in sequence]
