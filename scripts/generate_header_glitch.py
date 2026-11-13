@@ -42,28 +42,34 @@ def make_moon_sky(base, mask):
     glow = Image.new("RGB", base.size, (0, 0, 0))
     glow_draw = ImageDraw.Draw(glow)
     glow_draw.ellipse(
-        (cx - radius * 2, cy - radius * 2, cx + radius * 2, cy + radius * 2),
-        fill=(10, 90, 154),
+        (cx - radius * 1.35, cy - radius * 1.35, cx + radius * 1.35, cy + radius * 1.35),
+        fill=(8, 72, 128),
     )
-    sky = ImageChops.screen(sky, glow.filter(ImageFilter.GaussianBlur(radius=radius * 0.8)))
+    sky = ImageChops.screen(sky, glow.filter(ImageFilter.GaussianBlur(radius=radius * 0.38)))
 
+    # Cut an offset shadow out of the moon disc to create a clean crescent silhouette.
+    moon_mask = Image.new("L", base.size, 0)
+    mask_draw = ImageDraw.Draw(moon_mask)
+    mask_draw.ellipse((cx-radius, cy-radius, cx+radius, cy+radius), fill=255)
+    mask_draw.ellipse(
+        (cx + radius * 0.43, cy - radius * 1.15,
+         cx + radius * 2.43, cy + radius * 1.15),
+        fill=0,
+    )
     moon = Image.new("RGBA", base.size, (0, 0, 0, 0))
-    d = ImageDraw.Draw(moon)
-    d.ellipse(
-        (cx - radius, cy - radius, cx + radius, cy + radius),
-        fill=(172, 221, 246, 255),
-        outline=(218, 246, 255, 255),
-        width=max(1, round(width / 550)),
-    )
-    # Cool shaded edge and small crater details give the moon depth without adding new characters.
-    d.ellipse(
-        (cx + radius * 0.18, cy - radius * 0.9, cx + radius * 1.25, cy + radius * 0.85),
-        fill=(91, 151, 193, 235),
-    )
-    for ox, oy, crater in [(-0.32, -0.22, 0.12), (-0.12, 0.30, 0.09), (0.18, -0.34, 0.07)]:
-        r = round(radius * crater)
+    moon_color = Image.new("RGBA", base.size, (177, 224, 248, 255))
+    moon_color.putalpha(moon_mask)
+    moon = Image.alpha_composite(moon, moon_color)
+
+    # Fine craters add texture while keeping the crescent clean at profile scale.
+    details = Image.new("RGBA", base.size, (0, 0, 0, 0))
+    d = ImageDraw.Draw(details)
+    for ox, oy, crater in [(-0.40, -0.22, 0.095), (-0.20, 0.28, 0.075), (-0.10, -0.52, 0.05)]:
+        r = max(1, round(radius * crater))
         x, y = round(cx + radius * ox), round(cy + radius * oy)
-        d.ellipse((x-r, y-r, x+r, y+r), fill=(103, 163, 201, 180))
+        d.ellipse((x-r, y-r, x+r, y+r), fill=(89, 151, 192, 170))
+    details.putalpha(ImageChops.multiply(details.getchannel("A"), moon_mask))
+    moon = Image.alpha_composite(moon, details)
     return Image.alpha_composite(sky.convert("RGBA"), moon).convert("RGB")
 
 
@@ -119,7 +125,7 @@ def main():
         (base, 1100),
     ]
 
-    frames = [frame.quantize(colors=128, dither=Image.Dither.NONE) for frame, _ in sequence]
+    frames = [frame.quantize(colors=96, dither=Image.Dither.NONE) for frame, _ in sequence]
     DEST.parent.mkdir(parents=True, exist_ok=True)
     frames[0].save(
         DEST,
