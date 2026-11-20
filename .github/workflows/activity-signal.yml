@@ -3,8 +3,8 @@ name: CHXCHX Activity Signal
 on:
   workflow_dispatch:
   schedule:
-    # 04:30 UTC = 23:30 del día anterior en Colombia (UTC-5).
-    - cron: '30 4 * * *'
+    - cron: '30 23 * * *'
+      timezone: 'America/Bogota'
   push:
     branches: [main]
     paths:
