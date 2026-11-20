@@ -13,6 +13,8 @@
 
 El panel `assets/activity-signal.svg` se crea desde `scripts/generate_activity.py` y el README lo muestra como vector SVG. Se consulta el calendario de contribuciones visibles de GitHub mediante GraphQL en ventanas de 90 días para reducir problemas de límites de consulta. La representación conserva la estética del panel y la máscara original del encabezado como marca de agua. Muestra contribuciones visibles, días activos y racha actual; los datos se actualizan diariamente mediante GitHub Actions.
 
+El workflow se ejecuta diariamente a las 23:30 hora de Colombia (04:30 UTC). El generador usa la zona `America/Bogota` para calcular el día local y evitar que el corte UTC adelante el cambio de fecha.
+
 El SVG es la única salida del panel. El README enlaza el archivo SVG para que GitHub lo renderice sin rasterizarlo en PNG.
 
 > Los datos corresponden a contribuciones visibles para el token del workflow. No necesariamente incluyen la actividad privada ni coinciden con todas las métricas del perfil de usuario.
