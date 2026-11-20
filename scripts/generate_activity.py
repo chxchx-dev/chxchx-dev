@@ -7,7 +7,8 @@ The default GITHUB_TOKEN reads visible GitHub activity; no personal token requir
 import base64
 import json
 import os
-from datetime import date, datetime, timedelta, timezone
+from datetime import date, datetime, time, timedelta, timezone
+from zoneinfo import ZoneInfo
 from io import BytesIO
 from pathlib import Path
 from urllib.request import Request, urlopen
@@ -19,6 +20,7 @@ ROOT = Path(__file__).resolve().parents[1]
 ASSETS = ROOT / "assets"
 LOGIN = os.environ.get("PROFILE_USER", "chxchx-dev")
 TOKEN = os.environ.get("GITHUB_TOKEN", "")
+COLOMBIA_TZ = ZoneInfo("America/Bogota")
 QUERY = """query($login:String!, $start:DateTime!, $end:DateTime!) {
   user(login:$login) {
     contributionsCollection(from:$start, to:$end) {
@@ -31,7 +33,7 @@ QUERY = """query($login:String!, $start:DateTime!, $end:DateTime!) {
 def contributions():
     if not TOKEN:
         raise RuntimeError("GITHUB_TOKEN is required to render verified activity")
-    end = datetime.now(timezone.utc).date()
+    end = datetime.now(COLOMBIA_TZ).date()
     start = end - timedelta(days=364)
     records = {}
     a = start
@@ -39,8 +41,8 @@ def contributions():
         b = min(a + timedelta(days=89), end)
         payload = json.dumps({"query": QUERY, "variables": {
             "login": LOGIN,
-            "start": a.isoformat() + "T00:00:00Z",
-            "end": b.isoformat() + "T23:59:59Z",
+            "start": datetime.combine(a, time.min, COLOMBIA_TZ).isoformat(),
+            "end": datetime.combine(b, time(23, 59, 59), COLOMBIA_TZ).isoformat(),
         }}).encode()
         request = Request("https://api.github.com/graphql", data=payload, headers={
             "Authorization": "Bearer " + TOKEN,
@@ -96,8 +98,7 @@ def color(value):
 def build_svg(start, end, records):
     total = sum(records.values())
     active = sum(value > 0 for value in records.values())
-    # Count the active streak ending today, or yesterday if today's data has
-    # not arrived yet. This avoids resetting the streak early in the UTC day.
+    # Use the Colombia calendar date; today may still be incomplete before the scheduled 23:30 refresh.
     streak_end = end if records.get(end.isoformat(), 0) else end - timedelta(days=1)
     current_streak = 0
     while streak_end >= start and records.get(streak_end.isoformat(), 0):
@@ -123,7 +124,7 @@ def build_svg(start, end, records):
 <text x="54" y="89" fill="#3cd5ee" font-size="14" font-family="DejaVu Sans Mono,monospace">~/activity --source github --window 365d</text>
 <path d="M53 106H780" stroke="#1b5077" stroke-width="1"/>
 <text x="843" y="62" fill="#64e8f7" font-size="15" font-family="DejaVu Sans Mono,monospace">NODE // CHXCHX-DEV</text>
-<text x="843" y="86" fill="#a6c1d5" font-size="13" font-family="DejaVu Sans Mono,monospace">STATUS: VERIFIED • UTC</text>
+<text x="843" y="86" fill="#a6c1d5" font-size="13" font-family="DejaVu Sans Mono,monospace">STATUS: VERIFIED • COLOMBIA (UTC-5)</text>
 <circle cx="1130" cy="80" r="5" fill="#36e5c8"/>
 <rect x="842" y="104" width="310" height="169" rx="12" fill="#06192c" stroke="#16618d" stroke-width="1.4"/>
 """]
