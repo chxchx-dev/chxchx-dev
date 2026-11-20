@@ -7,12 +7,12 @@ The default GITHUB_TOKEN reads visible GitHub activity; no personal token requir
 import base64
 import json
 import os
-from datetime import date, datetime, time, timedelta, timezone
-from zoneinfo import ZoneInfo
+from datetime import date, datetime, time, timedelta
 from io import BytesIO
 from pathlib import Path
 from urllib.request import Request, urlopen
 from xml.sax.saxutils import escape
+from zoneinfo import ZoneInfo
 
 from PIL import Image, ImageEnhance, ImageOps
 
